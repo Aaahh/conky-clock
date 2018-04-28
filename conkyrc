@@ -1,0 +1,29 @@
+# Conky Word Clock
+use_xft yes
+xftfont Ubuntu-M:size=70
+
+update_interval 10
+total_run_times 0
+
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+own_window_type desktop
+own_window_argb_visual yes
+
+own_window_class override
+draw_shades no
+draw_outline no
+draw_borders no
+double_buffer yes
+
+alignment br
+gap_x 50
+gap_y 50
+
+color0 e6e6e6
+color1 191919	
+
+TEXT
+${execpi 2 python $HOME/conky-clock/clock.py}${font}${time %-I:%M %p}
+${goto -200}${voffset -52}${font Ubuntu-R:size=30}${time %A, %B %d}
